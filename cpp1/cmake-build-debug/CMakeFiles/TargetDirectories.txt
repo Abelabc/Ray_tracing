@@ -1,3 +1,0 @@
-F:/Ray_tracing/Ray_tracing/cpp1/cmake-build-debug/CMakeFiles/cpp1.dir
-F:/Ray_tracing/Ray_tracing/cpp1/cmake-build-debug/CMakeFiles/edit_cache.dir
-F:/Ray_tracing/Ray_tracing/cpp1/cmake-build-debug/CMakeFiles/rebuild_cache.dir
