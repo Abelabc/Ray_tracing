@@ -1,0 +1,3 @@
+/mnt/f/Ray_tracing/Ray_tracing/cpp1/build2/CMakeFiles/rebuild_cache.dir
+/mnt/f/Ray_tracing/Ray_tracing/cpp1/build2/CMakeFiles/edit_cache.dir
+/mnt/f/Ray_tracing/Ray_tracing/cpp1/build2/CMakeFiles/cpp1.dir

@@ -3,52 +3,19 @@
 #define SPHERE_H
 
 #include "hittable.h"
-#include "vec3.h"
-
-class sphere: public hittable {
+void get_sphere_uv(const vec3& p, double& u, double& v);
+class sphere: public hittable{
 public:
     sphere() {}
     sphere(vec3 cen, double r, shared_ptr<material>m) : center(cen), radius(r), mat_ptr(m) {}
 
     virtual bool hit(const ray& r, double tmin, double tmax, hit_record& rec) const;
-
+    virtual bool bounding_box(double t0, double t1, aabb& output_box) const;
 public:
     vec3 center;
     double radius;
     shared_ptr<material>mat_ptr;
 };
 
-bool sphere::hit(const ray& r, double t_min, double t_max, hit_record& rec) const {
-    vec3 oc = r.origin() - center;
-    auto a = r.direction().length_squared();
-    auto half_b = dot(oc, r.direction());
-    auto c = oc.length_squared() - radius*radius;
-    auto discriminant = half_b*half_b - a*c;
 
-    //如果击中了
-    if (discriminant > 0) {
-        auto root = sqrt(discriminant);
-        auto temp = (-half_b - root)/a;
-        //判定是否在包围核
-        if (temp < t_max && temp > t_min) {
-            rec.t = temp;
-            rec.p = r.at(rec.t);
-            vec3 out_normal = (rec.p - center) / radius;
-            rec.set_face_normal(r, out_normal);
-            rec.mat_ptr = mat_ptr;
-            return true;
-        }
-        temp = (-half_b + root) / a;
-        //判定是否在包围核
-        if (temp < t_max && temp > t_min) {
-            rec.t = temp;
-            rec.p = r.at(rec.t);
-            vec3 out_normal = (rec.p - center) / radius;
-            rec.set_face_normal(r, out_normal);
-            rec.mat_ptr = mat_ptr;
-            return true;
-        }
-    }
-    return false;
-}
 #endif

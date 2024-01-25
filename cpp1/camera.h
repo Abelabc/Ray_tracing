@@ -6,12 +6,14 @@
 
 class camera {
 public:
-    camera(vec3 lookfrom, vec3 lookat, vec3 vup,double vfov, double aspect, double aperture, double focus_dist) {
+    camera(vec3 lookfrom, vec3 lookat, vec3 vup,double vfov, double aspect, double aperture, double focus_dist, double t0=0., double t1=0.) {
 
         auto theta = degrees_to_radians(vfov);//转弧度制
         auto half_height = tan(theta/2);
         auto half_width = aspect * half_height;
 
+        double time0 =t0;
+        double time1 = t1;
         //lower_left_corner = vec3(-half_width, -half_height, -1.0);//左下角方向
         //horizontal = vec3(half_width*2, 0.0, 0.0);//x方向
         //vertical = vec3(0.0, half_height*2, 0.0);//y方向
@@ -32,7 +34,9 @@ public:
     ray get_ray(double s, double t) {
         vec3 rd = lens_radius * random_in_unit_disk() ;
         vec3 offset = u * rd.x() + v * rd.y();
-        return ray(origin + offset, lower_left_corner + s*horizontal + t*vertical - origin - offset);//uv像素到相机原点的向量
+        return ray(origin + offset,
+                   lower_left_corner + s*horizontal + t*vertical - origin - offset,
+                   random_double(time0, time1));//uv像素到相机原点的向量
     }
 
 public:
@@ -42,5 +46,6 @@ public:
     vec3 vertical;
     vec3 u,v,w;
     double lens_radius;
+    double time0, time1;
 };
 #endif

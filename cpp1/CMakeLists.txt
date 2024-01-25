@@ -1,7 +1,9 @@
 cmake_minimum_required(VERSION 3.16)
-project(cpp1)
+project(cpp)
 
 set(CMAKE_CXX_STANDARD 17)
 
-add_executable(cpp1 main.cpp
-        )
+file(GLOB SOURCES "*.cpp")
+
+add_executable(cpp1 ${SOURCES}
+        box.cpp)
