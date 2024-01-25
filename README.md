@@ -1,11 +1,6 @@
 ```markdown
 <table>
-  <tr>
-    <td><img src="https://github.com/Abelabc/Ray_tracing/blob/main/cpp1/pics/gamma.png" width="150"></td>
-    <td><img src="https://github.com/Abelabc/Ray_tracing/blob/main/cpp1/pics/camera.png" width="150"></td>
-    <td><img src="https://github.com/Abelabc/Ray_tracing/blob/main/cpp1/pics/test.png" width="150"></td>
-    <td><img src="https://github.com/Abelabc/Ray_tracing/blob/main/cpp1/pics/final.png" width="150"></td>
-  </tr>
+![](https://github.com/Abelabc/Ray_tracing/blob/main/cpp1/pics/gamma.png) ![](https://github.com/Abelabc/Ray_tracing/blob/main/cpp1/pics/camera.png) ![](https://github.com/Abelabc/Ray_tracing/blob/main/cpp1/pics/test.png) ![](https://github.com/Abelabc/Ray_tracing/blob/main/cpp1/pics/final.png) 
   <tr>
     <td><img src="https://github.com/Abelabc/Ray_tracing/blob/main/cpp1/pics/box.png" width="150"></td>
     <td><img src="https://github.com/Abelabc/Ray_tracing/blob/main/cpp1/pics/dielectric.png" width="150"></td>
